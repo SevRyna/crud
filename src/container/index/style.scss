@@ -1,6 +1,6 @@
 @use '../../lib/service.scss'as s;
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     padding: s.space(4);
@@ -9,7 +9,7 @@
 
    &__title {
     font-size: 20px;
-    font-weight: bolt;
+    font-weight: bold;
     padding-bottom: s.space(1);
     border-bottom: 1px solid s.color('light');
    }

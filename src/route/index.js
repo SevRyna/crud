@@ -38,24 +38,24 @@ class User {
       return false
     }
   }
-  static updateById = (id, {data }) => {
+  static updateById = (id, { data }) => {
     const user = this.getById(id)
 
     if (user) {
-      this.update(user,data)
-      
+      this.update(user, data)
+
       return true
-    }else {
+    } else {
       return false
     }
   }
 
-  static update =(user, {email})=>
-   if (email) {
-    user.email= email
+  static update = (user, { email }) => {
+    if (email) {
+      user.email = email
+    }
   }
 }
-
 //=========================================================
 // router.get Створює нам один ентпоїнт
 
@@ -114,7 +114,7 @@ router.post('/user-update', function (req, res) {
   const user = User.getById(Number(id))
 
   if (user.verifyPassword(password)) {
-    User.update(user, {email})
+    User.update(user, { email })
     result = true
   }
 

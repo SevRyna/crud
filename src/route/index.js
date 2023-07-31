@@ -20,9 +20,9 @@ class User {
     this.#list.push(user)
   }
 
-  static getList = () => {
+  static getList = () => 
     this.#list
-  }
+  
 
   static getById = (id) =>
     this.#list.find((user) => user.id === id)

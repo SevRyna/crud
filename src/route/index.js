@@ -22,7 +22,7 @@ class Product {
   static getList = () => this.#list
 
   static getById = (id) =>
-    this.#list.find(() => product.id === id)
+    this.#list.find((product) => product.id === id)
 
   static deleteById = (id) => {
     const index = this.#list.findIndex(
@@ -35,11 +35,11 @@ class Product {
       return false
     }
   }
-  static updateById = (id, { data }) => {
+  static editById = (id, { data }) => {
     const product = this.getById(id)
 
     if (product) {
-      this.update(product, data)
+      this.edit(product, data)
 
       return true
     } else {
@@ -47,13 +47,15 @@ class Product {
     }
   }
 
-  static update = (product, { name }) => {
+  static edit = (product, { name }) => {
     if (name) {
       product.name = name
     }
   }
 }
 //========================================================
+// router.get Створює нам один ентпоїнт
+
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -64,7 +66,7 @@ router.get('/', function (req, res) {
     style: 'index',
 
     data: {
-      product: {
+      products: {
         list,
         isEmpty: list.length === 0,
       },
@@ -92,7 +94,7 @@ router.post('/product-create', function (req, res) {
 router.get('/product-delete', function (req, res) {
   const { id } = req.query
 
-  Product.deleteById(id)
+  Product.deleteById(Number(id))
 
   res.render('alert', {
     style: 'alert',
@@ -105,10 +107,10 @@ router.post('/product-edit', function (req, res) {
 
   let result = false
 
-  const product = Product.getById(id)
+  const product = Product.editById(Number(id))
 
-  if (user.verifyName(name)) {
-    Product.update(price, { name })
+  if (product.verifyName(name)) {
+    Product.edit(price, { name })
     result = true
   }
 
@@ -120,5 +122,5 @@ router.post('/product-edit', function (req, res) {
   })
 })
 //=========================================
-// router.get Створює нам один ентпоїнт
+// Підключаємо роутер до бек-енду
 module.exports = router

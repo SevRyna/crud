@@ -4,29 +4,29 @@
   padding: 16px;
   gap: 32px;
 }
-.form__title {
+.form_title {
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 4px;
   border-bottom: 1px solid #1677b2;
 }
-.form__content {
+.form_content {
   display: grid;
   gap: 24px;
 }
-.form__field {
+.form_field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.form__label {
+.form_label {
   font-size: 14px;
 }
-.form__input {
+.form_input {
   border: 1px solid rgba(70, 66, 66, 0.3176470588);
   padding: 8px;
 }
-.form__button {
+.form_button {
   border: 1px solid #1677b2;
   padding: 8px;
 }

@@ -8,11 +8,11 @@ const router = express.Router()
 class Product {
   static #list = []
 
-  constructor(name, price, description) {
+  constructor(name, price, description, id) {
     this.name = name
     this.price = price
     this.description = description
-    this.id = Math.random(id)
+    Math.floor(Math.random() * 90000) + 10000
   }
 
   static add = () => {
@@ -76,7 +76,7 @@ router.get('/', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
-// ================================================================// Підключаємо роутер до бек-енду
+// ================================================================//
 router.post('/product-create', function (req, res) {
   const { name, price, description } = req.body
 
@@ -109,8 +109,8 @@ router.post('/product-edit', function (req, res) {
 
   const product = Product.editById(Number(id))
 
-  if (product.verifyName(name)) {
-    Product.edit(price, { name })
+  if (product.verifyId(name, price, description)) {
+    Product.edit(name, price, description)
     result = true
   }
 
@@ -122,5 +122,6 @@ router.post('/product-edit', function (req, res) {
   })
 })
 //=========================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router

@@ -4,30 +4,37 @@
   padding: 16px;
   gap: 32px;
 }
-.form_title {
+.form__title {
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 4px;
-  border-bottom: 1px solid #1677b2;
+  border-bottom: 1px solid;
 }
 .form_content {
-  display: grid;
+  display: flex;
   gap: 24px;
 }
 .form_field {
+  display: contents;
+  flex-direction: column;
+  gap: 8px;
+}
+.form_field1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 .form_label {
+  padding-top: 20px;
   font-size: 14px;
 }
 .form_input {
   border: 1px solid rgba(70, 66, 66, 0.3176470588);
-  padding: 8px;
+  padding-bottom: 20px;
 }
 .form_button {
-  border: 1px solid #1677b2;
+  background-color: #7ac1ee;
+  border: 1px solid rgba(70, 66, 66, 0.3176470588);
   padding: 8px;
 }
 

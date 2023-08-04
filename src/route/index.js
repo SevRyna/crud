@@ -60,13 +60,13 @@ class Product {
 // router.get Створює нам один ентпоїнт
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/product-list', function (req, res) {
   // res.render генерує нам HTML сторінку
   const list = Product.getList()
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('index', {
+  res.render('product-list', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'index',
+    style: 'product-list',
 
     data: {
       products: {

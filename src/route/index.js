@@ -90,9 +90,23 @@ router.post('/product-create', function (req, res) {
 
   res.render('alert', {
     style: 'alert',
-    info: 'Товар створений',
+    info: 'Створити товар',
   })
 })
+//=============================================================
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/product-create', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  const list = Product.getList()
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('product-create', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'product-create',
+  })
+
+  // ↑↑ сюди вводимо JSON дані
+})
+
 //=============================================================
 router.get('/product-edit', function (req, res) {
   const { id } = req.query

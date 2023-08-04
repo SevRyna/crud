@@ -12,10 +12,13 @@ class Product {
     this.name = name
     this.price = price
     this.description = description
-    Math.floor(Math.random() * 90000) + 10000
+    this.id = Math.floor(Math.random() * 100000)
+    this.createDate = () => {
+      this.date = new Date().toISOString()
+    }
   }
 
-  static add = () => {
+  static add = (product) => {
     this.#list.push(product)
   }
 
@@ -91,14 +94,14 @@ router.post('/product-create', function (req, res) {
   })
 })
 //=============================================================
-router.get('/product-delete', function (req, res) {
+router.get('/product-edit', function (req, res) {
   const { id } = req.query
 
   Product.deleteById(Number(id))
 
   res.render('alert', {
     style: 'alert',
-    info: 'Товар видалений',
+    info: result ? 'Зберегти оновлення' : 'Видалити товар',
   })
 })
 //=========================================================
@@ -116,9 +119,7 @@ router.post('/product-edit', function (req, res) {
 
   res.render('alert', {
     style: 'alert',
-    info: result
-      ? 'Зберегти оновлення'
-      : 'Повернутися назад',
+    info: result ? 'Зберегти оновлення' : 'Видалити товар',
   })
 })
 //=========================================

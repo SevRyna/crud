@@ -1,27 +1,20 @@
 {{! 
 Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- }}
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"}}
+
 <main>
- <div class="form">
-    <h1 class = "form_title">Створити список товарів</h1>
-    <div class"form_content">
-    <div class = "product-list">
-      {{#with data.products}}
-      {{#if isEmpty}}
-      <mark>Список товарів пустий</mark>
-      {{else}}
-      <ul>
-      {{#each list}}
-      <li> {{id}} <a href="/product-delete?id={{id}}">ідентифікатор товару</a></li>
-      {{/each}}
-      </ul>
-      {{/if}}
-      {{/with}}
-    </div>
-    <button class="form_button">Редагувати</button>
+{{#each list}}
+  <div class="product__card">
+  <div class="product__name">{{name}}</div>
+  <div class="product__description">{{description}}</div>
+  <div class="product__id">ID:{{id}}</div>
+  <div class ="product__row">
+  <div class="product__price">{{price}}$</div>
+  <button class="product__edit"><a href="/product-edit?id={{id}}"
+  >Редагувати</a></button>
   </div>
   </div>
+  {{/each}}
 </main>
 
 

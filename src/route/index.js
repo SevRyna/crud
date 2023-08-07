@@ -75,9 +75,9 @@ router.get('/product-list', function (req, res) {
       },
     },
   })
-
-  // ↑↑ сюди вводимо JSON дані
 })
+
+// ↑↑ сюди вводимо JSON дані
 
 // ================================================================//
 router.post('/product-create', function (req, res) {

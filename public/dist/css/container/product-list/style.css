@@ -44,10 +44,17 @@ main {
   gap: 40px;
 }
 
-.product-list li {
+.product-list {
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.product_card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
 }
 
 /*# sourceMappingURL=style.css.map */

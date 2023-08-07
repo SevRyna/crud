@@ -1,7 +1,7 @@
 {{! 
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"}}
-
+{{#with data.products}}
 <main>
 {{#each list}}
   <div class="product__card">
@@ -16,7 +16,7 @@
   </div>
   {{/each}}
 </main>
-
+{{/with}}
 
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

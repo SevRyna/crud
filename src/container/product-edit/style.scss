@@ -46,6 +46,13 @@
     border: 1px solid s.color('dark');
     padding: s.space(2);
 }
+
+  &_button red {
+    background-color: s.color('light');
+    border: 1px solid s.color('dark1');
+    padding: s.space(2);
+  }
+
 }
 
  main {

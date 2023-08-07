@@ -38,12 +38,14 @@ class Product {
       return false
     }
   }
-  static editById = (id, { data }) => {
+  static editById = (id, data) => {
     const product = this.getById(id)
+    const { name } = data
 
     if (product) {
-      this.edit(product, data)
-
+      if (name) {
+        product.name = name
+      }
       return true
     } else {
       return false
@@ -111,32 +113,52 @@ router.get('/product-create', function (req, res) {
 router.get('/product-edit', function (req, res) {
   const { id } = req.query
 
-  Product.deleteById(Number(id))
+  const product = Product.getById(Number(id))
+  if (product) {
+    // ↙️ cюди вводимо назву файлу з сontainer
+    return res.render('product-edit', {
+      // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+      style: 'product-edit',
 
-  res.render('alert', {
-    style: 'alert',
-    info: result ? 'Зберегти оновлення' : 'Видалити товар',
-  })
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+      info: product
+        ? 'Зберегти оновлення'
+        : 'Видалити товар',
+    })
+  }
 })
 //=========================================================
 router.post('/product-edit', function (req, res) {
-  const { price, name, description } = req.body
+  const { id, name, price, description } = req.body
 
-  let result = false
-
-  const product = Product.editById(Number(id))
-
-  if (product.verifyId(name, price, description)) {
-    Product.edit(name, price, description)
-    result = true
-  }
-
-  res.render('alert', {
+  return res.render('alert', {
     style: 'alert',
     info: result ? 'Зберегти оновлення' : 'Видалити товар',
   })
 })
 //=========================================
+router.post('/product-edit', function (req, res) {
+  const { id, name, price, description } = req.body
 
+  const product = Product.editById(Number(id), {
+    name,
+    price,
+    description,
+  })
+  return res.render('alert', {
+    style: 'alert',
+    info: result ? 'Зберегти оновлення' : 'Видалити товар',
+  })
+})
+//===============================================
 // Підключаємо роутер до бек-енду
 module.exports = router

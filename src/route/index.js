@@ -137,15 +137,7 @@ router.get('/product-edit', function (req, res) {
   }
 })
 //=========================================================
-router.post('/product-edit', function (req, res) {
-  const { id, name, price, description } = req.body
 
-  return res.render('alert', {
-    style: 'alert',
-    info: result ? 'Зберегти оновлення' : 'Видалити товар',
-  })
-})
-//=========================================
 router.post('/product-edit', function (req, res) {
   const { id, name, price, description } = req.body
 
@@ -156,7 +148,7 @@ router.post('/product-edit', function (req, res) {
   })
   return res.render('alert', {
     style: 'alert',
-    info: result ? 'Зберегти оновлення' : 'Видалити товар',
+    info: product ? 'Зберегти оновлення' : 'Видалити товар',
   })
 })
 //===============================================

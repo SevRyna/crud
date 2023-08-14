@@ -96,17 +96,17 @@ class Purchase{
   static #count = 0
   static #list = []
 
-static#bonusAccount = new Map()
+static #bonusAccount = new Map()
 
 static getBonusBalance = (email) => {
   return Purchase.#bonusAccount.get(email) || 0
 }
 
-static updateBonusBalance = {
+static updateBonusBalance = ({
   email,
   price,
   bonusUse = 0,
-  } => {
+  }) => {
     const amount = price * Purchase.#BONUS_FACTOR
 
     const currentBalance = Purchase.getBonusBalance(email)

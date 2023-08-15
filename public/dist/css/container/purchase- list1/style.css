@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.product-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr solid rgba(70, 66, 66, 0.3176470588);
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

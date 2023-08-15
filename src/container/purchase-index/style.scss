@@ -1,4 +1,4 @@
-@use'../..lib/service.scss' as s;
+@use'../../lib/service.scss' as s;
 
 @use'../../component/heading/style.scss' as headihg;
 @use'../../component/purchase-product/style.scss' as purchaseProduct;
@@ -11,6 +11,12 @@
   padding: s.space(10);
 }
 
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(4);
+  align-items: flex-start;
+}
 .product-list {
   width: 100%;
   display: grid;

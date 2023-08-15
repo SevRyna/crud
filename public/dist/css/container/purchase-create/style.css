@@ -1,10 +1,9 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use'../..lib/service.scss' as s;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src\component\purchase-product\style.scss 1:1  @use
- *   src\container\purchase-create\style.scss 2:1   root stylesheet */
+/* Error: There is no module with the namespace "s".
+ *    ,
+ * 10 |     gap:s.space(10);
+ *    |         ^^^^^^^^^^^
+ *    '
+ *   src\container\purchase-create\style.scss 10:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use'../..lib/service.scss' as s;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\component\\purchase-product\\style.scss 1:1  @use\a   src\\container\\purchase-create\\style.scss 2:1   root stylesheet";
+  content: 'Error: There is no module with the namespace "s".\a    \2577 \a 10 \2502      gap:s.space(10);\d\a    \2502          ^^^^^^^^^^^\a    \2575 \a   src\\container\\purchase-create\\style.scss 10:9  root stylesheet';
 }

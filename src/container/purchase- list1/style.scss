@@ -10,7 +10,7 @@
   .product-list {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr solid s.color('dark');
     gap: s.space(5);
   }
 

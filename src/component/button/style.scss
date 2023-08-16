@@ -1,9 +1,7 @@
 @use'../../lib/service.scss' as s;
 
 .button {
-    background-color: s.color(main);
-    color: white;
-    border: none;
+    background-color: s.color(light);
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;

@@ -6,20 +6,12 @@
 
 .main {
   display: flex;
-  flex-direction: column;
   gap: s.space(10);
   padding: s.space(10);
 }
 
-.product-info {
-  display: flex;
-  flex-direction: column;
-  gap: s.space(4);
-  align-items: flex-start;
-}
-.product-list {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: s.space(5);
+
+.list__card{
+ display: flex;
+
 }

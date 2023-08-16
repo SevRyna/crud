@@ -493,7 +493,6 @@ router.post('/purchase-create', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
-
 router.post('/purchase-submit', function (req, res) {
   const id = Number(req.query.id)
 
@@ -667,6 +666,22 @@ router.get('/purchase-info', function (req, res) {
     },
   })
   // ↑↑ сюди вводимо JSON дані
+})
+router.get('/purchase-edit', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  const id = Number(req.query.id)
+  const purchase = Purchase.getById(id)
+
+  res.render('purchase-edit', {
+    style: 'purchase-edit',
+    data: {
+      id: purchase.id,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
+    },
+  })
 })
 // Підключаємо роутер до бек-енду
 module.exports = router

@@ -43,53 +43,6 @@
 
 {{>button text="Оформити замовлення"}}
 
-
-{{>divider}}
-
-{{>heading title="Інформація про замовлення"}}
-
-{{>field text ="ID" value="id"}} 
-{{>field text ="Number" value="number"}}
-
-
-{{>field text ="Ім'я" value="firstname"}} 
-{{>field text ="Прізвище" value ="lastname"}}
-{{>field text ="Телефон" value ="phone"}}
-{{>field text ="Пошта" value ="email"}}
-{{>field text ="Коментар" value ="comment"}}
-{{>field text ="Списати бонуси" value ="bonus"}}
-{{>field text ="Промо-код" value ="promocode"}}
-
-{{>divider}}
-
-{{>field type ='number'value=totalPrice name="totalPrice" disabled=true}}
-{{>field value =productPrice name="productPrice"disabled=true }}
-{{>field value =deliveryPrice name="deliveryPrice" disabled=true}}
-{{>field value =amount name="amount" disabled=true}}
-
-
-<strong class="form-card_total">
-    Всього: {{totalPrice}} грн({{bonus}} грн бонусів)
-</strong>
-
-{{>button text="Змінити дані"}}
-
-
-{{>divider}}
-
-{{>heading title="Зміна данних"}}
-
-{{>field text ="ID" value="id"}} 
-{{>field text ="Number" value="number"}}
-
-
-{{>field text ="Ім'я" value="firstname"}} 
-{{>field text ="Прізвище" value ="lastname"}}
-{{>field text ="Телефон" value ="phone"}}
-{{>field text ="Пошта" value ="email"}}
-
-{{>button text ="Зберегти зміни"}}
-
 </form>
 {{/with}}
 </main>

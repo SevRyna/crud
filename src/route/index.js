@@ -655,6 +655,42 @@ router.post('/purchase-submit', function (req, res) {
   })
 })
 // ↑↑ сюди вводимо JSON дані
+router.get('/purchase-list', function (req, res) {
+  const list = Purchase.getList()
 
+  res.render('purchase-list', {
+    style: 'purchase-list',
+    data: {
+      purchases: {
+        list,
+      },
+    },
+  })
+})
+router.get('/purchase-info', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  const id = Number(req.query.id)
+  const purchase = Purchase.getById(id)
+  const bonus = Purchase.calcBonusAmount(
+    purchase.totalPrice,
+  )
+  res.render('purchase-info', {
+    style: 'purchase-info',
+    data: {
+      id: purchase.id,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
+      delivery: purchase.delivery,
+      product: purchase.product.title,
+      productPrice: purchase.productPrice,
+      deliveryPrice: purchase.deliveryPrice,
+      totalPrice: purchase.totalPrice,
+      bonus: bonus,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
 // Підключаємо роутер до бек-енду
 module.exports = router

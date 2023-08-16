@@ -1,16 +1,16 @@
 @use '../../lib/service.scss'as s;
 
-.main {
+.section {
     display: flex;
     flex-direction: column;
     gap: s.space(10);
     padding: s.space(10);
   }
   
-  .product-list {
+  .purchase-item_block {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr solid s.color('dark');
+    grid-template-columns: 1fr solid s.color(dark);
     gap: s.space(5);
   }
 

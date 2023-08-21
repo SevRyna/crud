@@ -4,16 +4,16 @@
 
 .choose {
   display: grid;
-  gap: s.spase(6);
+  gap: s.space(6);
 }
 
-.choose_item{
+.choose__item{
   display: grid;
   grid-template-columns: 54px 1fr;
   gap: s.space(6);
 }
 
-.choose_content {
+.choose__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

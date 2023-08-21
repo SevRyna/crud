@@ -29,17 +29,17 @@
   font-size: 14px;
 }
 .form_input {
-  border: 1px solid rgba(70, 66, 66, 0.3176470588);
+  border: 1px solid #121212;
   padding-bottom: 20px;
 }
 .form_button {
-  background-color: #7ac1ee;
-  border: 1px solid rgba(70, 66, 66, 0.3176470588);
+  background-color: #ddd;
+  border: 1px solid #121212;
   padding: 8px;
 }
 .form_button red {
-  background-color: #7ac1ee;
-  border: 1px solid red;
+  background-color: #ddd;
+  border: 1px solid;
   padding: 8px;
 }
 

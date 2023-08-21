@@ -16,7 +16,7 @@
 
 .product-card {
   border-radius: 10px;
-  border: 1px solid;
+  border: 1px solid #ced4da;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -36,13 +36,14 @@
 
 .product-card_subtitle {
   font-size: 16px;
+  color: #BDBDBD;
 }
 
 .product-card_category {
   padding: 4px;
   border-radius: 30px;
   font-size: 14px;
-  color: rgba(70, 66, 66, 0.3176470588);
+  color: #121212;
   border: 1px solid transparent;
 }
 
@@ -57,6 +58,7 @@
 }
 
 .product-card_button {
+  background-color: blue;
   color: white;
   border: none;
   border-radius: 5px;
@@ -81,7 +83,7 @@
 }
 
 .field_input {
-  border: 1px solid #7ac1ee;
+  border: 1px solid #ddd;
   padding: 8px;
   border-radius: 10px;
 }
@@ -92,7 +94,7 @@
 }
 
 .button {
-  background-color: #7ac1ee;
+  background-color: #ddd;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -116,7 +118,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  border: 1px solid;
+  border: 1px solid #ced4da;
   border-radius: 10px;
 }
 

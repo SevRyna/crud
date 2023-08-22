@@ -1,0 +1,17 @@
+@use '../../lib/service.scss' as s;
+
+.purchase-list {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(10);
+    padding: s.space(10);
+  }
+  
+  .purchase-item_block {
+    width: 100%;
+   display: grid;
+  // grid-template-columns: 1fr solid s.color(dark);
+   // gap: s.space(5);
+  }
+
+ 

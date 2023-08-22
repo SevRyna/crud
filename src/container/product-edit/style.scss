@@ -1,0 +1,70 @@
+@use '../../lib/service.scss'as s;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(4);
+    gap: s.space(8);
+    
+
+   &__title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: s.space(1);
+    border-bottom: 1px solid;
+   }
+
+   &_content {
+    display: flex;
+    gap: s.space(6);
+   }
+
+   &_field {
+    display: contents;
+    flex-direction: column;
+    gap: s.space(2);
+   }
+
+   &_field1 {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(2);
+   }
+
+   &_label {
+    padding-top: 20px;
+    font-size: 14px;
+   }
+
+   &_input {
+    border: 1px solid s.color('dark');
+    padding-bottom: 20px;
+   }
+
+  &_button {
+    background-color: s.color('light');
+    border: 1px solid s.color('dark');
+    padding: s.space(2);
+}
+
+  &_button red {
+    background-color: s.color('light');
+    border: 1px solid s.color('dark1');
+    padding: s.space(2);
+  }
+
+}
+
+ main {
+  display: flex;
+  flex-direction: column;
+  gap:s.space(10);
+ }
+
+ .product-list {
+  li {
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+ }

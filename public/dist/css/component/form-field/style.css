@@ -1,0 +1,23 @@
+.form-field {
+  display: grid;
+  size: 16px;
+  color: #000;
+  width: 100%;
+}
+
+.form-field_text {
+  font-size: 14px;
+}
+
+.form-field_input {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.form-field--disabled {
+  position: absolute;
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

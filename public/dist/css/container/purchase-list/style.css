@@ -1,0 +1,13 @@
+.purchase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.purchase-item_block {
+  width: 100%;
+  display: grid;
+}
+
+/*# sourceMappingURL=style.css.map */

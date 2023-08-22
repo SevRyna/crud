@@ -1,0 +1,26 @@
+@use'../../lib/service.scss' as s;
+
+.form-field {
+    display: grid;
+    size: 16px;
+    color: #000;
+    width: 100%;
+}
+
+.form-field_text {
+    font-size: 14px;
+}
+
+.form-field_input {
+    border: 1px solid s.color('light');
+    padding: s.space(2);
+    border-radius: 10px;
+}
+ 
+.form-field--disabled {
+  position: absolute;  
+  display: none;
+}
+ 
+
+   
